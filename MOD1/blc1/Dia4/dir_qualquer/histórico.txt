@@ -1,0 +1,3 @@
+  526  ls
+  527  cat histórico.txt
+  528  history | tail -3  > histórico.txt
