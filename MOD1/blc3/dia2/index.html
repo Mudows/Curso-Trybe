@@ -3,23 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <title>HTML</title>
-    <style>
-        h1{
-            font-size: 65px;
-            color: orange;
-        }
-        .mudaFundo{
-            background-color: #9966cc;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="meuEstilo.css?ts=<?= time() ?>">
   </head>
   <body>
     <h1>Exercícios 3.2</h1>
     <p class="mudaFundo">Qual é a sua cor favorita?</p>
     <ul class="mudaFundo">
-      <li>Amarelo</li>
-      <li>Vermelho</li>
-      <li>Marrom</li>
+      <li id="fAmarelo">Amarelo</li>
+      <li id="fVermelho">Vermelho</li>
+      <li id="fMarrom">Marrom</li>
     </ul>
   </body>
 </html>
