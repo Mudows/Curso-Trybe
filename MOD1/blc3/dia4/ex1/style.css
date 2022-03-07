@@ -1,0 +1,25 @@
+#nome-cientifico{
+    font-style: italic;
+    margin-top: 0px;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 0px;
+}
+
+h1, h2, h3, nav {
+    text-align: center;
+}
+
+section{
+    align-content: center;
+}
+
+.coluna1{
+    font-weight: bold;
+}
+
+p{
+    text-align: center;
+}
