@@ -1,0 +1,35 @@
+h1 {
+  font-size: 65px;
+  font-family: sans-serif;
+  color: orange;
+  text-align: center;
+  text-decoration: double;
+  font-style: normal;
+}
+
+body {
+  font-size: 16px;
+}
+
+p {
+  font-weight: 600;
+  font-size: 3em;
+  line-height: 60px;
+  text-align: center;
+}
+
+.mudaFundo {
+  background-color: #9966cc;
+}
+
+#fAmarelo {
+  background-color: yellow;
+}
+
+#fVermelho {
+  background-color: red;
+}
+
+#fMarrom {
+  background-color: brown;
+}
