@@ -61,6 +61,13 @@ console.log("---------- < ARRAY  DE 1 A 25 > ----------");
 
 let novoArray = [];
 
-for (let a = 0; a < 26; a += 1) {
-    
+for (let a = 1; a < 26; a += 1) {
+    novoArray.push(a);
+}
+console.log(novoArray);
+
+console.log("---------- < ARRAY NV DIVIDIDO > ----------");
+
+for (let a = 0; a < novoArray.length; a += 1) {
+    console.log(novoArray[a] / 2);
 }
