@@ -1,4 +1,4 @@
-console.log("---------------- FATORIAL ----------------");
+console.log("-------------------------------- FATORIAL");
 
 let fatorial = 10;
 let resultado = fatorial;
@@ -7,9 +7,9 @@ for (let i = 1; i < fatorial; i++) {
   resultado *= i;
 }
 
-console.log(resultado);
+console.log('Fatorial de ' + fatorial + ' é ' + resultado);
 
-console.log("---------------- INVERSOR ----------------");
+console.log("-------------------------------- INVERSOR");
 
 let word = "Trybe";
 let wordBack = "";
@@ -17,9 +17,11 @@ let wordBack = "";
 for (let i = word.length - 1; i >= 0; i--) {
   wordBack = wordBack + word[i];
 }
-console.log(wordBack);
+console.log(word + ' ao contrário é ' + wordBack);
 
-console.log("-------------- MAIOR E MENOR -------------");
+console.log("-------------------------------- MAIOR E MENOR");
+
+// Algorítimo que diz qual a maior palavra do array.
 
 let array = ["java", "javascript", "python", "html", "css"];
 let countHigh = 0;
@@ -34,6 +36,8 @@ for (let i = 0; i < array.length; i++) {
 
 console.log("A maior palavra do array é: " + array[arrayHighPosition]);
 
+// Algorítimo que diz qual a menor palavra do array.
+
 let countLow = array[0].length;
 let arrayLowPosition = 0;
 
@@ -46,5 +50,5 @@ for (let i = 0; i < array.length; i++) {
 
 console.log("A menor palavra do array é: " + array[arrayLowPosition]);
 
-console.log("-------------- MAIOR Nº PRIMO ------------");
+console.log("-------------------------------- MAIOR Nº PRIMO");
 
