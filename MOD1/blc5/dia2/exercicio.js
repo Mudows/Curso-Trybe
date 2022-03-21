@@ -8,8 +8,8 @@ document
 document.getElementsByTagName("h1")[0].innerText =
   "Exercício 5.2 - JavaScript DOM";
 
-  //Bônus 1
-document.getElementsByTagName("h1")[0].className += 'title';
+//Bônus 1
+document.getElementsByTagName("h1")[0].className += "title";
 
 ////////////////////////////////////// SEGUNDO REQUISITO
 // Adicione a tag main com a classe main-content como filho da tag body ;
@@ -40,39 +40,41 @@ centerContent.firstChild.innerText =
 ////////////////////////////////////// QUINTO REQUISITO
 // Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
 
-mainSection.appendChild(document.createElement('section'));
-mainSection.children[1].className += 'left-content';
-mainSection.children[1].id = 'img';
+mainSection.appendChild(document.createElement("section"));
+mainSection.children[1].className += "left-content";
+mainSection.children[1].id = "img";
 
 ////////////////////////////////////// SEXTO REQUISITO
 // Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
 
-mainSection.appendChild(document.createElement('section'));
-mainSection.lastChild.className += 'right-content';
-mainSection.lastChild.id = 'sectionLista';
+mainSection.appendChild(document.createElement("section"));
+mainSection.lastChild.className += "right-content";
+mainSection.lastChild.id = "sectionLista";
 
 ////////////////////////////////////// SÉTIMO REQUISITO
 // Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
 
-document.getElementById('img').innerHTML = '<img src="https://picsum.photos/200" class="small-image">';
+document.getElementById("img").innerHTML =
+  '<img src="https://picsum.photos/200" class="small-image">';
 
 ////////////////////////////////////// OITAVO REQUISITO
 // Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
 
-let secaoDaLista = document.getElementById('sectionLista');
+let secaoDaLista = document.getElementById("sectionLista");
 
-secaoDaLista.appendChild(document.createElement('ul'));
-secaoDaLista.firstChild.id = 'listaUl';
+secaoDaLista.appendChild(document.createElement("ul"));
+secaoDaLista.firstChild.id = "listaUl";
 
 for (let i = 0; i < 10; i += 1) {
-    document.getElementById('listaUl').appendChild(document.createElement('li'));
-    document.getElementById('listaUl').children[i].innerText = i + 1;
+  document.getElementById("listaUl").appendChild(document.createElement("li"));
+  document.getElementById("listaUl").children[i].innerText = i + 1;
 }
 
 ////////////////////////////////////// NONO REQUISITO - FINAL
 // Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
 
 for (let i = 0; i < 3; i += 1) {
-    mainSection.appendChild(document.createElement('h3'));
-   // mainSection.children[i].innerText = i + 1;
+  mainSection.appendChild(document.createElement("h3"));
+  //Bônus 2
+  mainSection.getElementsByTagName("h3")[i].className += "description";
 }
