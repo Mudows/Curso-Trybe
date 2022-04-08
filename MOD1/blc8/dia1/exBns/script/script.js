@@ -19,50 +19,62 @@ const dragon = {
 };
 
 const battleMembers = { mage, warrior, dragon };
-
-const dragonBtn = document.getElementById('dragon');
-const warBtn = document.getElementById('warrior');
-const magBtn = document.getElementById('mage');
 const display = document.getElementById('display');
 
 // Calcula o dano infligido pelo Dragão.
 const dragonDamage = () =>
-  display.textContent = Math.round(Math.random() * (dragon.strength - 15) + 15);
-
-dragonBtn.addEventListener('click', dragonDamage);
+  Math.round(Math.random() * (dragon.strength - 15) + 15);
 
 // Calcula o dano infligido pelo Guerreiro.
 const warMinDmg = warrior.strength;
 const warMaxDmg = warMinDmg * warrior.weaponDmg;
 
 const warriorDamage = () =>
-display.textContent = Math.round(Math.random() * (warMaxDmg - warMinDmg) + warMinDmg);
-
-warBtn.addEventListener('click', warriorDamage);
+  Math.round(Math.random() * (warMaxDmg - warMinDmg) + warMinDmg);
 
 // Calcula o dano infligido pelo Mago e a quantidade de mana gasta.
 const magMinDmg = mage.intelligence;
 const magMaxDmg = magMinDmg * 2;
 let currMana = mage.mana;
-const magAtkResult = {
-  dano: 0,
-  mana: `${currMana}`,
+
+const mageDamage = () =>
+  Math.round(Math.random() * (magMaxDmg - magMinDmg) + magMinDmg);
+
+const warTurn = (warriorDamage) => {
+  warrior.damage = warriorDamage();
+  dragon.healthPoints -= warrior.damage;
 };
 
-function mageDamage() {
-    const mageAtk = `Dano: ${magAtkResult.dano} / Mana: ${magAtkResult.mana}`;
-  if (currMana < 15) {
-    magAtkResult.dano = `Sem mana suficiente.`;
-    display.textContent = mageAtk;
+const magTurn = (mageDamage) => {
+  if (mage.mana > 15) {
+    mage.damage = mageDamage();
+    dragon.healthPoints -= mage.damage;
+    mage.mana -= 15;
     return;
   }
+  mage.damage = 'Sem mana para atacar.';
+  return 0;
+};
 
-  magAtkResult.dano = Math.round(
-    Math.random() * (magMaxDmg - magMinDmg) + magMinDmg
-  );
-  currMana -= 15;
-  magAtkResult.mana = `${currMana} (-15)`;
-  display.textContent = mageAtk;
-}
+const dragTurn = (dragonDamage) => {
+  dragon.damage = dragonDamage();
+  warrior.healthPoints -= dragon.damage;
+  mage.healthPoints -= dragon.damage;
+};
 
-magBtn.addEventListener('click', mageDamage);
+const turnResult = () => {
+  if (warrior.healthPoints <= 0) delete battleMembers.warrior;
+  if (mage.healthPoints <= 0) delete battleMembers.mage;
+  if (dragon.healthPoints <= 0) delete battleMembers.dragon;
+  console.log(battleMembers);
+};
+
+document.getElementById('turn').addEventListener('click', () => {
+  const gameActions = {
+    // Crie as HOFs neste objeto.
+    warTurn: warTurn(warriorDamage),
+    magTurn: magTurn(mageDamage),
+    dragTurn: dragTurn(dragonDamage),
+    turnResult: turnResult(),
+  };
+});
