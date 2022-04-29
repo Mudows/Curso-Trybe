@@ -67,6 +67,7 @@ const turnResult = () => {
   if (mage.healthPoints <= 0) delete battleMembers.mage;
   if (dragon.healthPoints <= 0) delete battleMembers.dragon;
   console.log(battleMembers);
+  display.innerHTML = `${Object.entries(battleMembers)}`;
 };
 
 document.getElementById('turn').addEventListener('click', () => {
