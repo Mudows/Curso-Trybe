@@ -15,14 +15,12 @@ function createList(moeda, simb, valDol) {
 
 window.onload = async () => {
   const moedas = await pegaCrypto();
-  console.log(moedas);
+  // console.log(moedas);
   // document.getElementById('lista').textContent = moedas.data[1].id;
-  moedas.data.forEach(element => {
-    const coin = element.name;
+  moedas.data.forEach((element) => {
+/*     const coin = element.name;
     const symb = element.symbol;
-    const dolVal = element.supply;
-    createList(coin, symb, dolVal);
+    const dolVal = element.supply; */
+    createList(element.name, element.symbol, element.supply);
   });
 };
-
-
