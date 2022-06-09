@@ -5,6 +5,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.escreve = this.escreve.bind(this);
+    this.mudaCor = this.mudaCor.bind(this);
     this.state = {
       pBotao: 0,
       sBotao: 0,
