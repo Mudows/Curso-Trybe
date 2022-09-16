@@ -7,5 +7,4 @@ try {
   console.log(data);
 } catch (err) {
   console.error(`Algo de errado não está certo no arquivo: ${err.path}`)
-  console.log(err)
 }
